@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Construir y levantar contenedores') {
+            steps {
+                script {
+                    sh 'docker-compose down || true'
+                    sh 'docker-compose up -d --build'
+                }
+            }
+        }
+
+        stage('Verificar servicios') {
+            steps {
+                sh 'docker ps'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '¡Despliegue exitoso con Docker Compose! 🚀'
+        }
+        failure {
+            echo 'Algo falló 😢'
+        }
+    }
+}
