@@ -2,9 +2,21 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Hola Mundo</title>
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Hola Mundo, desde Jenkins + Docker!</h1>
+  <div class="login-container">
+    <h1>Iniciar Sesión</h1>
+    <form action="#" method="POST">
+      <label for="usuario">Usuario</label>
+      <input type="text" id="usuario" name="usuario" required>
+
+      <label for="contrasena">Contraseña</label>
+      <input type="password" id="contrasena" name="contrasena" required>
+
+      <button type="submit">Ingresar</button>
+    </form>
+  </div>
 </body>
 </html>
