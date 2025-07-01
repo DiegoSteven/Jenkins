@@ -14,6 +14,7 @@ pipeline {
 
         stage('Reiniciar contenedor web') {
             steps {
+                sh 'docker ps'
                 sh '''
                 docker stop mi-web || true
                 docker rm mi-web || true
